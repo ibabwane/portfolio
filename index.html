@@ -5,96 +5,132 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Iqbal Babwane — Data Analytics & ML</title>
 
-  <!-- Simple reset + Google font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Inter font to match Picto demo -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
+    /* --- Color / layout tokens tuned to match Picto demo --- */
     :root{
-      --bg:#071021;         /* dark blue/black like Picto */
-      --panel:#0e1824;
-      --muted:#9fb0bf;
-      --accent:#06b6d4;     /* cyan */
-      --accent-2:#3b82f6;
+      --bg-1: #07101a;        /* page background (very dark navy) */
+      --bg-2: #071827;
+      --panel: #0e1620;       /* panel card */
+      --muted: #9fb0bf;       /* muted text */
+      --accent: #06b6d4;      /* cyan */
+      --accent-2: #3b82f6;    /* blue accent */
       --glass: rgba(255,255,255,0.03);
-      --card-shadow: 0 10px 30px rgba(3,8,15,0.7);
-      --radius:14px;
-      --max:1100px;
+      --card-shadow: 0 18px 40px rgba(3,8,15,0.7);
+      --radius: 18px;
+      --container: 1160px;
     }
+
+    /* --- Base reset & typography --- */
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      background:linear-gradient(180deg,var(--bg),#071827);
-      color:#e8f4fb;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      color: #e9f6fb;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       line-height:1.45;
       padding:32px 20px;
     }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
 
-    /* Container */
-    .wrap{max-width:var(--max);margin:0 auto;}
+    /* --- Container --- */
+    .wrap{max-width:var(--container);margin:0 auto}
 
-    /* Top nav (minimal, similar to Picto) */
-    .nav{display:flex;justify-content:flex-end;gap:14px;margin-bottom:18px}
-    .nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:10px}
+    /* --- Navigation (minimal right-side) --- */
+    .nav{display:flex;justify-content:flex-end;gap:12px;margin-bottom:18px}
+    .nav a{color:var(--muted);padding:8px 10px;border-radius:10px;font-weight:600}
     .nav a:hover{background:var(--glass);color:var(--accent)}
 
-    /* Hero */
-    .hero{display:grid;grid-template-columns:360px 1fr;gap:32px;align-items:center;padding:28px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border-radius:18px;box-shadow:var(--card-shadow)}
-    @media (max-width:880px){ .hero{grid-template-columns:1fr;text-align:center;padding:20px} .hero .left{margin:0 auto} }
-
-    .left{display:flex;flex-direction:column;gap:18px;align-items:center}
-    .photo{
-      width:320px;height:320px;border-radius:18px;overflow:hidden;border:6px solid rgba(255,255,255,0.03);
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      box-shadow:0 20px 40px rgba(3,8,15,0.7);
-      display:flex;align-items:center;justify-content:center;
+    /* --- Hero (left photo, right text) --- */
+    .hero{
+      display:grid;
+      grid-template-columns:360px 1fr;
+      gap:32px;
+      align-items:center;
+      padding:28px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      border-radius:calc(var(--radius) - 6px);
+      box-shadow: var(--card-shadow);
     }
-    .photo img{width:100%;height:100%;object-fit:cover;display:block;}
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr;text-align:center;padding:20px}
+    }
 
-    .right h1{margin:0;font-size:34px;letter-spacing:-0.5px}
-    .right .lead{margin:10px 0;color:var(--muted);font-size:16px}
-    .cta{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
-    .btn{background:var(--accent);color:#06202a;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700}
-    .btn-secondary{border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--muted);text-decoration:none;font-weight:600}
+    .left{display:flex;flex-direction:column;gap:16px;align-items:center}
+    .photo{
+      width:320px;height:320px;border-radius:var(--radius);overflow:hidden;border:6px solid rgba(255,255,255,0.03);
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;box-shadow:0 30px 50px rgba(3,8,15,0.7);
+    }
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
 
-    /* Sections */
-    section{margin-top:40px}
+    .meta{color:var(--muted);font-size:14px}
+    .right h1{margin:0;font-size:36px;letter-spacing:-0.6px}
+    .lead{margin-top:10px;color:var(--muted);font-size:16px;max-width:760px}
+
+    .cta{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+    .btn{
+      background:var(--accent);color:#052027;padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:10px;
+      box-shadow: 0 8px 20px rgba(6,182,212,0.08);
+    }
+    .btn-secondary{
+      border:1px solid rgba(255,255,255,0.06);
+      padding:11px 16px;border-radius:12px;color:var(--muted);font-weight:700;text-decoration:none;
+      display:inline-flex;align-items:center;
+      background:transparent;
+    }
+
+    .pitch{margin-top:18px;padding:16px;border-radius:12px;background:var(--panel);border:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+
+    /* --- Sections --- */
+    section{margin-top:42px}
     .section-head{display:flex;align-items:center;gap:12px}
     .section-head h2{margin:0;color:var(--accent)}
-    .card{background:var(--panel);padding:18px;border-radius:12px;box-shadow:var(--card-shadow)}
 
-    /* Services chips */
+    .card{background:var(--panel);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);box-shadow:0 14px 30px rgba(3,8,15,0.5)}
+
+    /* --- Services chips --- */
     .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-    .chip{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600;border:1px solid rgba(255,255,255,0.02)}
+    .chip{padding:8px 12px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0.01));color:var(--muted);font-weight:700;border:1px solid rgba(255,255,255,0.02)}
 
-    /* Projects grid */
+    /* --- Two-column content below hero --- */
+    .cols{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-top:20px}
+    @media (max-width:920px){ .cols{grid-template-columns:1fr} }
+
+    /* --- Projects grid (picto style) --- */
     .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
     @media (max-width:1100px){ .projects{grid-template-columns:repeat(2,1fr)} }
     @media (max-width:640px){ .projects{grid-template-columns:1fr} }
-    .proj{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:16px;border-radius:12px}
+    .proj{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
     .proj h3{margin:0 0 8px 0;font-size:16px}
     .proj p{margin:0;color:var(--muted);font-size:14px}
-    .proj .proj-links{margin-top:10px;display:flex;gap:8px}
+    .proj .links{margin-top:10px;display:flex;gap:8px}
 
-    /* Two-column layout below hero */
-    .cols{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-top:20px}
-    @media (max-width:880px){ .cols{grid-template-columns:1fr} }
+    /* --- Aside (contact, skills) --- */
+    .chips-vertical{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+    .skill{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)}
 
-    .skills{display:flex;flex-direction:column;gap:8px}
-    .skill-item{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)}
-    .skill-item strong{color:var(--text)}
-    .contact-card .row{display:flex;gap:10px;align-items:center;margin-top:8px;color:var(--muted)}
-    .small{font-size:13px;color:var(--muted)}
+    footer{text-align:center;margin-top:36px;color:var(--muted);font-size:13px;padding-bottom:20px}
 
-    footer{text-align:center;margin-top:36px;color:var(--muted);font-size:13px;padding-bottom:40px}
+    /* small responsiveness tweaks */
+    @media (max-width:520px){
+      .photo{width:240px;height:240px}
+      .hero{padding:16px}
+      .right h1{font-size:28px}
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <!-- nav -->
-    <nav class="nav" aria-label="main navigation">
+    <!-- navigation -->
+    <nav class="nav" aria-label="main nav">
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#projects">Projects</a>
@@ -105,46 +141,44 @@
     <header class="hero" role="banner">
       <div class="left">
         <div class="photo" aria-hidden="true">
-          <!-- expects profile.png in repo root. If you prefer embedded data uri, replace src with data:... -->
+          <!-- Make sure profile.png is in repo root OR replace with data URI -->
           <img src="profile.png" alt="Iqbal Babwane photo" />
         </div>
-        <div class="small">Based in Mumbai · Open to remote & contract work</div>
+        <div class="meta">Mumbai · Available for remote/contract</div>
       </div>
 
       <div class="right">
         <h1>Iqbal Babwane</h1>
-        <div class="lead">Data Analytics · Data Management · ML Model Deployment — I build dashboards, data pipelines and production-ready ML solutions.</div>
+        <div class="lead">Data Analytics · Data Management · ML Deployment — I build dashboards, data pipelines and deployable ML solutions.</div>
+
         <div class="cta">
-          <a class="btn" href="Iqbal_Babwane_CV_Dubai_10_2025.pdf" target="_blank">Download Resume</a>
+          <a class="btn" href="Iqbal_Babwane_CV_Dubai_10_2025.pdf" target="_blank" rel="noopener">Download Resume</a>
           <a class="btn-secondary" href="https://github.com/ibabwane" target="_blank">View GitHub</a>
         </div>
 
-        <div style="margin-top:18px" class="card small">
+        <div class="pitch">
           <strong>Quick pitch:</strong>
           <div style="margin-top:8px;color:var(--muted)">
-            I help teams convert messy data into clear dashboards and models — from ingestion & ETL to dashboarding and deploying ML prototypes to production.
+            I help teams convert messy data into reliable dashboards and production-ready ML models — from ingestion & ETL to visualization and deployment.
           </div>
         </div>
       </div>
     </header>
 
-    <!-- about + services -->
+    <!-- about -->
     <section id="about">
-      <div class="section-head">
-        <h2>About</h2>
-      </div>
+      <div class="section-head"><h2>About</h2></div>
       <div class="card" style="margin-top:12px">
         <p style="color:var(--muted);margin:0">
-          Business Intelligence & Data Analytics professional with ~4–5 years experience in analytics, ETL, dashboarding and applied machine learning.
-          Focused on delivering accurate data pipelines, intuitive reporting, and deployable ML solutions that drive decisions.
+          Business Intelligence & Data professional with ~4–5 years of experience delivering ETL, dashboards and applied machine learning solutions. 
+          I focus on reliable data pipelines, clear KPI design, and actionable reporting for decision-makers.
         </p>
       </div>
     </section>
 
+    <!-- services -->
     <section id="services">
-      <div class="section-head" style="margin-top:22px">
-        <h2>Services</h2>
-      </div>
+      <div class="section-head" style="margin-top:22px"><h2>Services</h2></div>
       <div class="card" style="margin-top:12px">
         <div class="chips">
           <div class="chip">Data Analytics & Reporting</div>
@@ -157,28 +191,29 @@
       </div>
     </section>
 
-    <!-- projects and right column -->
+    <!-- projects + aside -->
     <div class="cols">
       <main>
         <section id="projects">
           <div class="section-head"><h2>Selected Projects</h2></div>
-          <div class="projects" role="list" aria-label="projects list">
+
+          <div class="projects" role="list" aria-label="projects">
             <article class="proj" role="listitem">
               <h3>ResiBuilt — Sales Forecast Dashboard</h3>
-              <p>Power BI forecasting dashboard with scenario comparisons and monthly vs actual analysis. (Power BI, DAX, Snowflake)</p>
-              <div class="proj-links"><a class="btn-secondary" href="https://github.com/ibabwane/resibuilt-forecast" target="_blank">View Repo</a></div>
+              <p>Power BI forecasting dashboard with scenario comparisons and monthly vs actual analysis (Power BI, DAX, Snowflake).</p>
+              <div class="links"><a class="btn-secondary" href="https://github.com/ibabwane/resibuilt-forecast" target="_blank">View Repo</a></div>
             </article>
 
             <article class="proj" role="listitem">
               <h3>FixFast — Automated Invoice ETL</h3>
-              <p>End-to-end invoice ingestion pipeline (email → SQL → Power BI) that reduces manual work significantly.</p>
-              <div class="proj-links"><a class="btn-secondary" href="https://github.com/ibabwane/invoice-automation" target="_blank">View Repo</a></div>
+              <p>End-to-end invoice ingestion pipeline (email → SQL → Power BI) that automates reporting and reduces manual effort.</p>
+              <div class="links"><a class="btn-secondary" href="https://github.com/ibabwane/invoice-automation" target="_blank">View Repo</a></div>
             </article>
 
             <article class="proj" role="listitem">
               <h3>Customer Churn ML Model</h3>
-              <p>Data cleaning, feature engineering and LightGBM model for churn prediction, with evaluation notes and deployment steps.</p>
-              <div class="proj-links"><a class="btn-secondary" href="https://github.com/ibabwane/churn-model" target="_blank">View Repo</a></div>
+              <p>Feature engineering, model training and evaluation for churn prediction, with deployment notes (Python, scikit-learn).</p>
+              <div class="links"><a class="btn-secondary" href="https://github.com/ibabwane/churn-model" target="_blank">View Repo</a></div>
             </article>
           </div>
         </section>
@@ -187,21 +222,20 @@
       <aside>
         <div class="card contact-card">
           <h2>Contact & Links</h2>
-          <div class="row"><strong>Email:</strong><span style="margin-left:auto;color:var(--muted)">iqbalbabwane@gmail.com</span></div>
-          <div class="row"><strong>Phone:</strong><span style="margin-left:auto;color:var(--muted)">+91 96996 21525</span></div>
-          <div class="row"><strong>GitHub:</strong><span style="margin-left:auto;color:var(--muted)"><a href="https://github.com/ibabwane" target="_blank" style="color:var(--muted)">github.com/ibabwane</a></span></div>
-          <div class="row" style="margin-top:10px"><a class="btn" href="Iqbal_Babwane_CV_Dubai_10_2025.pdf" target="_blank">Download Resume</a></div>
+          <div style="margin-top:8px;color:var(--muted)">Email: <a href="mailto:iqbalbabwane@gmail.com" style="color:var(--accent)">iqbalbabwane@gmail.com</a></div>
+          <div style="margin-top:8px;color:var(--muted)">Phone: <span style="color:var(--muted)">+91 96996 21525</span></div>
+          <div style="margin-top:8px;color:var(--muted)">GitHub: <a href="https://github.com/ibabwane" target="_blank" style="color:var(--muted)">github.com/ibabwane</a></div>
+          <div style="margin-top:10px"><a class="btn" href="Iqbal_Babwane_CV_Dubai_10_2025.pdf" target="_blank">Download Resume</a></div>
         </div>
 
         <div class="card" style="margin-top:16px">
           <h2>Skills</h2>
-          <div class="chips" style="margin-top:10px">
-            <div class="chip">Power BI / DAX</div>
-            <div class="chip">SQL / Snowflake</div>
-            <div class="chip">Python / Pandas</div>
-            <div class="chip">scikit-learn / ML</div>
-            <div class="chip">Power Query</div>
-            <div class="chip">Azure / Fabric</div>
+          <div style="margin-top:10px" class="chips-vertical">
+            <div class="skill"><strong>Power BI / DAX</strong><span style="color:var(--muted)">Advanced</span></div>
+            <div class="skill"><strong>SQL / Snowflake</strong><span style="color:var(--muted)">Advanced</span></div>
+            <div class="skill"><strong>Python / Pandas</strong><span style="color:var(--muted)">Advanced</span></div>
+            <div class="skill"><strong>scikit-learn / ML</strong><span style="color:var(--muted)">Intermediate</span></div>
+            <div class="skill"><strong>Power Query</strong><span style="color:var(--muted)">Advanced</span></div>
           </div>
         </div>
 
@@ -214,10 +248,10 @@
       </aside>
     </div>
 
-    <section id="contact" style="margin-top:26px">
+    <section id="contact" style="margin-top:32px">
       <div class="card">
         <h2>Get in touch</h2>
-        <p style="color:var(--muted);margin-top:6px">Interested in working together? Email me at <a href="mailto:iqbalbabwane@gmail.com" style="color:var(--accent)">iqbalbabwane@gmail.com</a> — you can also view my GitHub for project details.</p>
+        <p style="color:var(--muted);margin-top:6px">Interested in working together? Email <a href="mailto:iqbalbabwane@gmail.com" style="color:var(--accent)">iqbalbabwane@gmail.com</a> or view my projects on GitHub.</p>
       </div>
     </section>
 
