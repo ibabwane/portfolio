@@ -83,7 +83,105 @@
   <div class="wrap">
     <div class="top">
       <div class="photo">
-        <!-- ✅ Your photo embedded directly below -->
+        <!-- Image file expected at repo root as: profile.png -->
         <img src="profile.png"
-     alt="Iqbal Babwane photo"
-     style="width:220px;height:220px;object-fit:cover;border-radius:16px;">
+             alt="Iqbal Babwane photo"
+             style="width:220px;height:220px;object-fit:cover;border-radius:16px;">
+      </div>
+
+      <div style="text-align:center;max-width:500px">
+        <h1>Iqbal Babwane</h1>
+        <div class="subtitle">Data Analytics · Data Management · ML Deployment</div>
+        <div class="contact">
+          📧 <a href="mailto:iqbalbabwane@gmail.com" style="color:var(--text);text-decoration:underline">iqbalbabwane@gmail.com</a><br>
+          💻 <a href="https://github.com/ibabwane" target="_blank" style="color:var(--text);text-decoration:underline">github.com/ibabwane</a>
+        </div>
+        <div style="margin-top:12px">
+          <a class="btn" href="Iqbal_Babwane_CV_Dubai_10_2025.pdf" target="_blank" rel="noopener">📄 Download Resume</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div>
+        <div class="card">
+          <h2>About Me</h2>
+          <p style="color:var(--muted);margin-top:8px">
+            I’m a results-driven data professional with around 4–5 years of experience in transforming complex business data into clear insights. 
+            I specialize in analytics, data management, dashboard development, and machine learning deployment. 
+            My goal is to help teams make smarter, data-backed decisions through clean data and meaningful visualization.
+          </p>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h2>Highlighted Projects</h2>
+          <div class="projects" style="margin-top:10px">
+            <div class="proj">
+              <h3>🏗️ ResiBuilt — Sales Forecast Dashboard</h3>
+              <p>Forecasting dashboard with monthly vs. actual analysis and scenario comparisons. (Power BI, DAX, Snowflake)</p>
+              <div style="margin-top:8px"><a class="btn" href="https://github.com/ibabwane/resibuilt-forecast" target="_blank">View Repo</a></div>
+            </div>
+
+            <div class="proj">
+              <h3>📊 FixFast — Automated Invoice ETL</h3>
+              <p>End-to-end automation from email ingestion to SQL and Power BI reporting — reducing manual effort by 90%.</p>
+              <div style="margin-top:8px"><a class="btn" href="https://github.com/ibabwane/invoice-automation" target="_blank">View Repo</a></div>
+            </div>
+
+            <div class="proj">
+              <h3>🤖 Customer Churn ML Model</h3>
+              <p>Feature engineering, model training, and evaluation for churn prediction using Python and scikit-learn.</p>
+              <div style="margin-top:8px"><a class="btn" href="https://github.com/ibabwane/churn-model" target="_blank">View Repo</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h2>Services I Provide</h2>
+          <div class="chips">
+            <div class="chip">Data Analytics & Reporting</div>
+            <div class="chip">Data Management & ETL</div>
+            <div class="chip">Dashboard Creation (Power BI / Tableau)</div>
+            <div class="chip">ML Model Development & Deployment</div>
+            <div class="chip">KPI Design & Forecasting</div>
+            <div class="chip">Automation (Power Automate / Python)</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h2>Skills & Tools</h2>
+          <div class="chips">
+            <div class="chip">Power BI / DAX</div>
+            <div class="chip">SQL / Snowflake</div>
+            <div class="chip">Python / Pandas</div>
+            <div class="chip">scikit-learn / ML</div>
+            <div class="chip">Power Query</div>
+            <div class="chip">Azure / Fabric</div>
+            <div class="chip">Tableau / DOMO</div>
+            <div class="chip">Advanced Excel</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h2>Certifications & Languages</h2>
+          <p style="color:var(--muted);font-size:14px">
+            Certified in Advanced Power BI, SQL for Data Science, Tableau Desktop, Azure Data Fundamentals, and Python for Data Analysis.<br><br>
+            Languages: English (Fluent), Urdu (Native), Basic Arabic Reading.
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="yr"></span> Iqbal Babwane · Data Analytics & ML · Last updated: <span id="date"></span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.getElementById('date').textContent = new Date().toLocaleDateString();
+  </script>
+</body>
+</html>
