@@ -1,67 +1,146 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Iqbal Babwane — Data Analyst & ML Enthusiast</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    :root{
+      --bg:#0f172a;
+      --card:#1e293b;
+      --accent:#06b6d4;
+      --text:#f8fafc;
+      --muted:#94a3b8;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(135deg,#0f172a,#1e293b);
+      color:var(--text);
+    }
+    a{color:var(--accent);text-decoration:none;}
+    header{
+      text-align:center;
+      padding:50px 20px 20px;
+    }
+    header h1{margin:0;font-size:2.2rem;color:var(--accent);}
+    header p{color:var(--muted);font-size:1rem;}
+    .avatar{
+      width:100px;height:100px;margin:0 auto 10px;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--accent),#3b82f6);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:600;font-size:28px;color:#0f172a;
+    }
+    section{max-width:900px;margin:40px auto;padding:0 20px;}
+    h2{color:var(--accent);margin-bottom:12px;}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;}
+    .chip{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.05);
+      border-radius:20px;
+      padding:6px 14px;
+      font-size:14px;
+      color:var(--text);
+    }
+    .projects{
+      display:grid;
+      gap:20px;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      margin-top:16px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:16px;
+      padding:20px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.3);
+      transition:transform .2s, box-shadow .2s;
+    }
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 24px rgba(0,0,0,0.4);
+    }
+    .card h3{margin:0 0 8px;color:#fff;font-size:1.1rem;}
+    .card p{margin:0;color:var(--muted);font-size:0.9rem;}
+    .btn{
+      display:inline-block;margin-top:10px;padding:8px 14px;
+      border-radius:8px;
+      background:var(--accent);color:#0f172a;
+      font-weight:600;font-size:0.9rem;
+    }
+    footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:0.8rem;
+      padding:30px 10px;
+      border-top:1px solid rgba(255,255,255,0.05);
+      margin-top:40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="avatar">IB</div>
+    <h1>Iqbal Babwane</h1>
+    <p>Data Analytics · Data Management · Machine Learning</p>
+    <p><a href="mailto:your.email@example.com">your.email@example.com</a> · 
+       <a href="https://github.com/ibabwane" target="_blank">github.com/ibabwane</a></p>
+  </header>
 
-\f0\fs24 \cf0 <!doctype html>\
-<html lang="en">\
-<head>\
-  <meta charset="utf-8"/>\
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>\
-  <title>Your Name \'97 Data Analytics & ML</title>\
-  <style>\
-    body\{font-family:Arial,Helvetica,sans-serif;max-width:900px;margin:40px auto;padding:20px;color:#111\}\
-    header\{display:flex;gap:16px;align-items:center\}\
-    .avatar\{width:64px;height:64px;border-radius:10px;background:#06b6d4;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700\}\
-    h1\{margin:0\}\
-    .muted\{color:#555\}\
-    .chips\{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px\}\
-    .chip\{padding:6px 10px;border-radius:999px;background:#f1f5f9;border:1px solid #e2e8f0;font-size:13px\}\
-    .project\{border-top:1px solid #eee;padding-top:12px;margin-top:12px\}\
-    a\{text-decoration:none;color:#0366d6\}\
-    footer\{margin-top:24px;color:#666;font-size:13px\}\
-  </style>\
-</head>\
-<body>\
-  <header>\
-    <div class="avatar">YN</div>\
-    <div>\
-      <h1>Your Name</h1>\
-      <div class="muted">Data Analytics \'b7 Data Management \'b7 Machine Learning</div>\
-      <div style="margin-top:8px">\
-        <a href="mailto:you@example.com">you@example.com</a> \'b7 <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>\
-      </div>\
-    </div>\
-  </header>\
-\
-  <section style="margin-top:18px">\
-    <h2>Services</h2>\
-    <div class="chips">\
-      <div class="chip">Data analytics</div>\
-      <div class="chip">ETL / Data management</div>\
-      <div class="chip">Dashboards (Power BI)</div>\
-      <div class="chip">ML models</div>\
-    </div>\
-  </section>\
-\
-  <section style="margin-top:18px">\
-    <h2>Projects</h2>\
-    <div class="project">\
-      <strong>Sales Forecasting</strong>\
-      <div class="muted">Short: Forecasting model + dashboard. <a href="https://github.com/yourusername/resibuilt-forecast" target="_blank">Repo</a></div>\
-    </div>\
-    <div class="project">\
-      <strong>Invoice Automation</strong>\
-      <div class="muted">Short: Auto-ingest invoices to SQL & Power BI. <a href="https://github.com/yourusername/invoice-automation" target="_blank">Repo</a></div>\
-    </div>\
-  </section>\
-\
-  <footer>\
-    Built by Your Name \'97 Last updated: <span id="d"></span>\
-    <script>document.getElementById('d').textContent = new Date().toLocaleDateString()</script>\
-  </footer>\
-</body>\
-</html>\
-}
+  <section>
+    <h2>Services</h2>
+    <div class="chips">
+      <div class="chip">Data Analytics</div>
+      <div class="chip">Power BI Dashboards</div>
+      <div class="chip">ETL / Data Management</div>
+      <div class="chip">SQL & Snowflake</div>
+      <div class="chip">Machine Learning</div>
+      <div class="chip">Python Automation</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Highlighted Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>🏗️ ResiBuilt — Sales Forecast Dashboard</h3>
+        <p>Power BI forecasting dashboard built with Snowflake data and advanced DAX measures to track monthly performance vs targets.</p>
+        <a class="btn" href="https://github.com/ibabwane/resibuilt-forecast" target="_blank">View on GitHub</a>
+      </div>
+      <div class="card">
+        <h3>📊 FixFast — Automated Invoice ETL</h3>
+        <p>Power Automate + SQL + Power BI pipeline that ingests invoices automatically, reducing manual work by 90%.</p>
+        <a class="btn" href="https://github.com/ibabwane/invoice-automation" target="_blank">View on GitHub</a>
+      </div>
+      <div class="card">
+        <h3>🤖 Customer Churn ML Model</h3>
+        <p>Python + scikit-learn ML model predicting customer churn with 88% accuracy, including EDA and feature engineering.</p>
+        <a class="btn" href="https://github.com/ibabwane/churn-model" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="chips">
+      <div class="chip">Python</div>
+      <div class="chip">Pandas / NumPy</div>
+      <div class="chip">scikit-learn</div>
+      <div class="chip">SQL</div>
+      <div class="chip">Power Query / DAX</div>
+      <div class="chip">Snowflake</div>
+      <div class="chip">Git & GitHub</div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Iqbal Babwane · Built with ❤️ using HTML & CSS · Last updated: <span id="date"></span>
+  </footer>
+
+  <script>
+    document.getElementById("date").textContent = new Date().toLocaleDateString();
+  </script>
+</body>
+</html>
