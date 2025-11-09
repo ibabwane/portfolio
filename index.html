@@ -111,7 +111,7 @@
         }
 
         .logo {
-            font-size: 2.8rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
@@ -266,125 +266,83 @@
             text-align: center;
         }
 
-        .about-image img {
-            max-width: 100%;
+        .about-img-container {
+            width: 100%;
+            max-width: 400px;
             border-radius: 10px;
+            overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
         }
 
-        /* Skills Section */
-        .skills {
+        .about-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Services Section */
+        .services {
             background-color: var(--light-color);
         }
 
-        .skills-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
         }
 
-        .skill-category {
+        .service-category {
             background-color: var(--white);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            border-left: 4px solid var(--primary-color);
         }
 
-        .skill-title {
+        .service-category:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-title {
             font-size: 1.5rem;
             margin-bottom: 20px;
             color: var(--primary-color);
+            display: flex;
+            align-items: center;
         }
 
-        .skill-list {
+        .service-title i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+
+        .service-list {
             list-style: none;
         }
 
-        .skill-list li {
-            margin-bottom: 10px;
-            padding-left: 20px;
+        .service-list li {
+            margin-bottom: 12px;
+            padding-left: 10px;
             position: relative;
-        }
-
-        .skill-list li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-        }
-
-        /* Experience Section */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: var(--primary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-content {
-            padding: 20px 30px;
-            background-color: var(--white);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .timeline-date {
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .timeline-company {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        .timeline-role {
-            font-weight: 600;
-            margin-bottom: 15px;
             color: var(--gray-color);
         }
 
-        .timeline-list {
-            list-style: none;
-        }
-
-        .timeline-list li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .timeline-list li::before {
+        .service-list li::before {
             content: '•';
             position: absolute;
             left: 0;
             color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .service-description {
+            margin-top: 15px;
+            color: var(--gray-color);
+            font-style: italic;
+            border-top: 1px solid #e9ecef;
+            padding-top: 15px;
         }
 
         /* Portfolio Section */
@@ -409,11 +367,18 @@
         .portfolio-img {
             width: 100%;
             height: 200px;
-            background-color: #e9ecef;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-color);
+            overflow: hidden;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.05);
         }
 
         .portfolio-content {
@@ -432,6 +397,12 @@
             margin-bottom: 10px;
         }
 
+        .portfolio-description {
+            margin-bottom: 15px;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
         .portfolio-link {
             color: var(--primary-color);
             font-weight: 600;
@@ -447,41 +418,6 @@
 
         .portfolio-link:hover i {
             transform: translateX(5px);
-        }
-
-        /* Education & Certifications */
-        .education-certifications {
-            background-color: var(--light-color);
-        }
-
-        .edu-cert-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .education, .certifications {
-            flex: 1;
-            min-width: 300px;
-            margin-bottom: 30px;
-        }
-
-        .edu-item, .cert-item {
-            background-color: var(--white);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 20px;
-        }
-
-        .edu-degree, .cert-name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .edu-details, .cert-details {
-            color: var(--gray-color);
         }
 
         /* Contact Section */
@@ -548,6 +484,27 @@
             resize: vertical;
         }
 
+        /* Form Message Styles */
+        .form-message {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 4px;
+            display: none;
+            font-weight: 500;
+        }
+
+        .form-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
         /* Footer */
         footer {
             background-color: var(--dark-color);
@@ -612,20 +569,6 @@
                 margin-bottom: 40px;
             }
             
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
             .contact-info {
                 margin-right: 0;
                 margin-bottom: 40px;
@@ -674,6 +617,10 @@
                 width: 250px;
                 height: 250px;
             }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 576px) {
@@ -707,10 +654,8 @@
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="hamburger">
@@ -748,7 +693,7 @@
                     <div class="stat-text">Years Experience</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">25+</div>
+                    <div class="stat-number">15+</div>
                     <div class="stat-text">Dashboards Developed</div>
                 </div>
                 <div class="stat-item">
@@ -769,117 +714,63 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Skilled in Power BI, SQL, Snowflake, Tableau, DOMO Analysis, Microsoft Fabric, Python, and ML with proven expertise in KPI development, automation, and data warehouse integration. Strong track record of implementing 25+ interactive dashboards, optimizing reporting workflows, and improving data-driven decision-making across Finance, Construction, Real Estate, and Cost Management domains.</p>
+                    <p>Skilled in Power BI, Microsoft Fabric, SQL, Snowflake, and Python, with proven expertise in KPI development, automation, and data warehouse integration. Strong track record of implementing 15+ interactive dashboards, optimizing reporting workflows, and improving data-driven decision-making across Finance, Construction, Real Estate, and Cost Management domains.</p>
                     <p>Experienced in collaborating with cross-functional teams, ensuring compliance with IT SOPs, and supporting large-scale, multi-regional BI projects.</p>
                     <div class="about-buttons">
                         <a href="#contact" class="btn">Hire Me</a>
-                        <a href="#" class="btn btn-outline">Download CV</a>
+                        <a href="https://drive.google.com/file/d/13QTv7D3WN9Row0oFa2_wx4uoJvxGnBDe/view?usp=sharing" class="btn btn-outline">Download CV</a>
                     </div>
                 </div>
                 <div class="about-image">
-                    <div style="width: 100%; height: 400px; background-color: #e9ecef; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
-                        <i class="fas fa-chart-line" style="font-size: 5rem; color: #6c757d;"></i>
+                    <div class="about-img-container">
+                        <img src="https://github.com/ibabwane/portfolio/raw/main/profile.jpeg" alt="Iqbal Babwane" class="about-img">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <!-- Services Section -->
+    <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Core Competencies</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3 class="skill-title">Data Visualization & Reporting</h3>
-                    <ul class="skill-list">
-                        <li>Power BI</li>
-                        <li>Tableau</li>
-                        <li>Advanced Excel</li>
-                        <li>DOMO Analysis</li>
-                        <li>Dashboard Development</li>
-                        <li>Power Query/DAX</li>
+            <h2 class="section-title">What I Can Do For You</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; color: var(--gray-color);">I transform complex data into clear business insights that drive growth and efficiency</p>
+            
+            <div class="services-grid">
+                <div class="service-category">
+                    <h3 class="service-title"><i class="fas fa-chart-bar"></i> Business Intelligence & Analysis</h3>
+                    <ul class="service-list">
+                        <li>Interactive Business Performance Dashboards</li>
+                        <li>KPI & Scorecard Reporting</li>
+                        <li>Trend & Performance Analysis</li>
+                        <li>Financial & Cost Insights</li>
+                        <li>Forecast & Planning Analysis</li>
                     </ul>
+                    <p class="service-description">Turn your data into actionable insights with clear, interactive dashboards that help you make better business decisions</p>
                 </div>
-                <div class="skill-category">
-                    <h3 class="skill-title">Data Management</h3>
-                    <ul class="skill-list">
-                        <li>SQL Server</li>
-                        <li>Snowflake</li>
-                        <li>PostgreSQL</li>
-                        <li>SharePoint</li>
+                
+                <div class="service-category">
+                    <h3 class="service-title"><i class="fas fa-cogs"></i> Data Engineering & Automation</h3>
+                    <ul class="service-list">
+                        <li>Automated Data Collection Systems</li>
+                        <li>Enterprise Data Integration</li>
+                        <li>Data Modeling & Architecture</li>
+                        <li>Data Warehouse Solutions</li>
+                        <li>Reporting Automation</li>
                     </ul>
+                    <p class="service-description">Build reliable data pipelines that automatically gather, clean, and organize your information for consistent reporting</p>
                 </div>
-                <div class="skill-category">
-                    <h3 class="skill-title">Data Engineering</h3>
-                    <ul class="skill-list">
-                        <li>Data Integration</li>
-                        <li>Data Modelling</li>
-                        <li>Data Cleaning & Validation</li>
-                        <li>ETL/ELT</li>
+                
+                <div class="service-category">
+                    <h3 class="service-title"><i class="fas fa-robot"></i> Advanced Analytics & AI</h3>
+                    <ul class="service-list">
+                        <li>Predictive Business Modeling</li>
+                        <li>Customer Segmentation</li>
+                        <li>Text & Review Analysis</li>
+                        <li>Demand & Sales Forecasting</li>
+                        <li>Risk & Anomaly Detection</li>
                     </ul>
-                </div>
-                <div class="skill-category">
-                    <h3 class="skill-title">Business Skills</h3>
-                    <ul class="skill-list">
-                        <li>KPI Tracking</li>
-                        <li>Forecasting</li>
-                        <li>Stakeholder Communication</li>
-                        <li>Cross-Functional Collaboration</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3 class="skill-title">Programming & Machine Learning</h3>
-                    <ul class="skill-list">
-                        <li>Python</li>
-                        <li>Supervised/Unsupervised Learning</li>
-                        <li>NLP</li>
-                        <li>Time Series Forecasting</li>
-                        <li>Model Evaluation</li>
-                        <li>Regression, Decision Tree, Random Forest</li>
-                        <li>Gradient Boosting, Classification</li>
-                        <li>K-Mean Cluster, Sentiment Analysis</li>
-                        <li>A/B Testing, Cross Validation</li>
-                        <li>Predictive Analytics</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">Work Experience</h2>
-            <div class="timeline">
-                <!-- Experience 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Aug 2023 – Present</div>
-                        <h3 class="timeline-company">Valenta AI Pvt – Mumbai, India</h3>
-                        <div class="timeline-role">Data Analyst</div>
-                        <ul class="timeline-list">
-                            <li>Designed 15+ dynamic Power BI dashboards for real-time cost management, improving accuracy by 30% and reducing reporting time by 40%.</li>
-                            <li>Automated invoice audits with Power Automate, reducing manual effort by 50% and ensuring consistent supplier performance tracking.</li>
-                            <li>Configured SQL Server for secure financial reporting, boosting compliance accuracy by 25%.</li>
-                            <li>Integrated multi-source financial data (SQL, Excel, SharePoint) into automated workflows, enabling decision-makers to access insights 20% faster.</li>
-                            <li>Delivered executive–ready dashboards to US and UK clients, simplifying complex metrics for non-technical users.</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Experience 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">Jul 2021 – Aug 2023</div>
-                        <h3 class="timeline-company">Nvidia – Mumbai, India</h3>
-                        <div class="timeline-role">Data Analyst</div>
-                        <ul class="timeline-list">
-                            <li>Analyzed large datasets exceeding 10M+ rows, identifying patterns that informed product development strategies.</li>
-                            <li>Developed interactive dashboards in Power BI & Tableau, enabling real-time operational monitoring for global teams.</li>
-                            <li>Partnered with engineering, sales, and product teams to ensure data-driven decision-making.</li>
-                            <li>Standardized data cleaning, validation, and transformation workflows, boosting reporting accuracy by 25%.</li>
-                        </ul>
-                    </div>
+                    <p class="service-description">Use advanced analytics to predict trends, understand customers, and identify opportunities before your competitors</p>
                 </div>
             </div>
         </div>
@@ -889,88 +780,54 @@
     <section id="portfolio" class="portfolio">
         <div class="container">
             <h2 class="section-title">Portfolio</h2>
-            <p style="margin-bottom: 40px;">Here's a selection of my recent work, showcasing my skills in creating data-driven solutions and interactive dashboards.</p>
+            <p style="margin-bottom: 40px;">Here's a selection of my recent data analysis and machine learning projects.</p>
             <div class="portfolio-grid">
                 <!-- Portfolio Item 1 -->
                 <div class="portfolio-item">
                     <div class="portfolio-img">
-                        <i class="fas fa-chart-bar" style="font-size: 3rem; color: #6c757d;"></i>
+                        <img src="https://github.com/ibabwane/portfolio/raw/main/Play%20Store.png" alt="Play Store App Review Analysis">
                     </div>
                     <div class="portfolio-content">
-                        <span class="portfolio-category">POWER BI DASHBOARD</span>
-                        <h3 class="portfolio-title">Real-time Cost Management</h3>
-                        <p>Designed dynamic Power BI dashboards for real-time cost management, improving accuracy by 30% and reducing reporting time by 40%.</p>
-                        <a href="#" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        <span class="portfolio-category">DATA ANALYSIS</span>
+                        <h3 class="portfolio-title">Play Store App Review Analysis</h3>
+                        <p class="portfolio-description">Exploratory analysis of Play Store apps data to discover key factors responsible for app engagement and success.</p>
+                        <a href="https://github.com/ibabwane/Play-Store-App-Review" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <!-- Portfolio Item 2 -->
                 <div class="portfolio-item">
                     <div class="portfolio-img">
-                        <i class="fas fa-cogs" style="font-size: 3rem; color: #6c757d;"></i>
+                        <img src="https://github.com/ibabwane/portfolio/raw/main/CreditCard.png" alt="Credit Card Default Prediction">
                     </div>
                     <div class="portfolio-content">
-                        <span class="portfolio-category">AUTOMATION</span>
-                        <h3 class="portfolio-title">Invoice Audit Automation</h3>
-                        <p>Automated invoice audits with Power Automate, reducing manual effort by 50% and ensuring consistent supplier performance tracking.</p>
-                        <a href="#" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        <span class="portfolio-category">MACHINE LEARNING</span>
+                        <h3 class="portfolio-title">Credit Card Default Prediction</h3>
+                        <p class="portfolio-description">Predicting customers default payments in Taiwan using various ML models with best results from SVC.</p>
+                        <a href="https://github.com/ibabwane/Credit-Card-Default-Prediction-" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <!-- Portfolio Item 3 -->
                 <div class="portfolio-item">
                     <div class="portfolio-img">
-                        <i class="fas fa-database" style="font-size: 3rem; color: #6c757d;"></i>
+                        <img src="https://github.com/ibabwane/portfolio/raw/main/Bike%20Sharing.png" alt="Bike Sharing Demand Prediction">
                     </div>
                     <div class="portfolio-content">
-                        <span class="portfolio-category">DATA INTEGRATION</span>
-                        <h3 class="portfolio-title">Multi-source Financial Data</h3>
-                        <p>Integrated multi-source financial data (SQL, Excel, SharePoint) into automated workflows, enabling decision-makers to access insights 20% faster.</p>
-                        <a href="#" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        <span class="portfolio-category">MACHINE LEARNING</span>
+                        <h3 class="portfolio-title">Bike Sharing Demand Prediction</h3>
+                        <p class="portfolio-description">Predicting bike count required at each hour for stable supply of rental bikes using LightGBM model.</p>
+                        <a href="https://github.com/ibabwane/Bike-Sharing-Demand-Prediction" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="#" class="btn btn-outline">More Projects</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education & Certifications Section -->
-    <section id="education" class="education-certifications">
-        <div class="container">
-            <h2 class="section-title">Education & Certifications</h2>
-            <div class="edu-cert-container">
-                <div class="education">
-                    <h3 style="margin-bottom: 20px;">Education</h3>
-                    <div class="edu-item">
-                        <div class="edu-degree">Bachelor of Engineering – Automobile</div>
-                        <div class="edu-details">Mumbai University | CGPA: 7.12 | 2020</div>
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://github.com/ibabwane/portfolio/raw/main/Zomato.png" alt="Zomato Restaurant Clustering & Sentiment Analysis">
                     </div>
-                </div>
-                <div class="certifications">
-                    <h3 style="margin-bottom: 20px;">Certifications</h3>
-                    <div class="cert-item">
-                        <div class="cert-name">Advanced Power BI Data Analyst Associate</div>
-                    </div>
-                    <div class="cert-item">
-                        <div class="cert-name">SQL for Data Science</div>
-                    </div>
-                    <div class="cert-item">
-                        <div class="cert-name">DOMO Professional Analyst Certificate</div>
-                    </div>
-                    <div class="cert-item">
-                        <div class="cert-name">Advance Excel for Data Analyst</div>
-                    </div>
-                    <div class="cert-item">
-                        <div class="cert-name">Azure Data Fundamentals</div>
-                    </div>
-                    <div class="cert-item">
-                        <div class="cert-name">Python for Data Analysis and ML</div>
-                    </div>
-                    <div class="cert-item">
-                        <div class="cert-name">Tableau Desktop Associate</div>
-                    </div>
-                    <div class="cert-item">
-                        <div class="cert-name">Data Science Professional Certificate</div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">NLP & CLUSTERING</span>
+                        <h3 class="portfolio-title">Zomato Restaurant Clustering & Sentiment Analysis</h3>
+                        <p class="portfolio-description">Restaurant clustering and sentiment analysis of reviews using NLP techniques and TF-IDF.</p>
+                        <a href="https://github.com/ibabwane/ZOMATO-RESTAURANT-CLUSTERING-AND-SENTIMENT-ANALYSIS" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -1028,20 +885,21 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form>
+                    <form action="https://formspree.io/f/xqawznkn" method="POST" id="contact-form">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Name*" required>
+                            <input type="text" name="name" class="form-control" placeholder="Your Name*" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email*" required>
+                            <input type="email" name="email" class="form-control" placeholder="Your Email*" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
+                            <input type="text" name="subject" class="form-control" placeholder="Subject">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Message"></textarea>
+                            <textarea name="message" class="form-control" placeholder="Your Message*" required></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
+                        <div id="form-message" class="form-message"></div>
                     </form>
                 </div>
             </div>
@@ -1062,10 +920,8 @@
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#education">Education</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -1116,6 +972,57 @@
                         behavior: 'smooth'
                     });
                 }
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const messageDiv = document.getElementById('form-message');
+            const originalText = submitBtn.textContent;
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            messageDiv.style.display = 'none';
+            
+            // Get form data
+            const formData = new FormData(form);
+            
+            // Send form data to Formspree
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    messageDiv.textContent = '✅ Message sent successfully! I will get back to you soon.';
+                    messageDiv.className = 'form-message form-success';
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                messageDiv.textContent = '❌ Failed to send message. Please email me directly at iqbalbabwane@gmail.com';
+                messageDiv.className = 'form-message form-error';
+                console.error('Form submission error:', error);
+            })
+            .finally(() => {
+                messageDiv.style.display = 'block';
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 5000);
             });
         });
     </script>
